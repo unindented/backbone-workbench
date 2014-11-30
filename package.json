@@ -2,7 +2,7 @@
   "name":        "backbone-workbench",
   "description": "Backbone workbench.",
 
-  "version":     "0.0.1",
+  "version":     "0.0.2",
   "main":        "dist/backbone-workbench.js",
 
   "repository": {
