@@ -1,0 +1,184 @@
+/*
+ * Tabs
+ * -------------------------------------------------- */
+
+
+/* Variables
+ * -------------------------------------------------- */
+
+:root {
+
+--tabs-width:                      220px;
+
+--tabs-header-bg:                  var(--brand-primary, #0072c6);
+--tabs-header-height:              60px;
+--tabs-header-margin:              30px;
+
+--tabs-navigation-shadow:          1px 0 10px 0px color(black alpha(25%));
+
+--tabs-target-padding-vertical:    15px;
+--tabs-target-padding-horizontal:  15px;
+
+--tabs-content-padding-vertical:   20px;
+--tabs-content-padding-horizontal: 30px;
+
+--tabs-level1-bg:                  #333;
+--tabs-level1-hover-bg:            color(var(--tabs-level1-bg) l(-5%));
+--tabs-level1-color:               #eee;
+--tabs-level1-hover-color:         color(var(--tabs-level1-color) l(+15%));
+
+--tabs-level2-bg:                  #ddd;
+--tabs-level2-hover-bg:            color(var(--tabs-level2-bg) l(-10%));
+--tabs-level2-color:               #666;
+--tabs-level2-hover-color:         color(var(--tabs-level2-color) l(-15%));
+
+--tabs-level3-bg:                  #eee;
+--tabs-level3-hover-bg:            color(var(--tabs-level3-bg) l(-10%));
+--tabs-level3-color:               #777;
+--tabs-level3-hover-color:         color(var(--tabs-level3-color) l(-15%));
+
+}
+
+
+/* Container
+ * ------------------------- */
+
+.bw-tabs {
+  display: table;
+}
+
+
+/* Pusher
+ * ------------------------- */
+
+.bw-tabs--pusher {
+  width: var(--tabs-width);
+}
+
+
+/* Navigation
+ * ------------------------- */
+
+.bw-tabs--navigation {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 4;
+  width: var(--tabs-width);
+  overflow: scroll;
+  background-color: var(--tabs-level1-bg);
+  box-shadow: var(--tabs-navigation-shadow);
+}
+
+.bw-tabs--header {
+  display: block;
+  height: var(--tabs-header-height);
+  margin-bottom: var(--tabs-header-margin);
+  text-align: center;
+}
+
+.bw-tabs--header.has-logo {
+  background-color: var(--tabs-header-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.bw-tabs--items {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.bw-tabs--target {
+  display: block;
+  padding: var(--tabs-target-padding-vertical) var(--tabs-target-padding-horizontal);
+  font-weight: bold;
+  color: var(--tabs-level1-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition-timing-function: ease-in-out;
+  transition-duration: .2s;
+  transition-property: color, background-color;
+}
+
+.bw-tabs--target:hover,
+.bw-tabs--target:focus,
+.bw-tabs--target:active {
+  color: var(--tabs-level1-hover-color);
+  text-decoration: none;
+}
+
+.bw-tabs--item.is-active .bw-tabs--target {
+  color: var(--tabs-level1-hover-color);
+  background-color: var(--tabs-level1-hover-bg);
+}
+
+/* Panels
+ * ------------------------- */
+
+.bw-tabs--panels {
+  display: table-cell;
+  width: 100%;
+}
+
+.bw-tabs--panel {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  clear: fix;
+}
+
+.bw-tabs--panel.is-leaf {
+  padding: var(--tabs-content-padding-vertical) var(--tabs-content-padding-horizontal);
+}
+
+.bw-tabs--panel.is-readable {
+  background-color: var(--body-bg, white);
+}
+
+/* Nested tabs (level 2+)
+ * ------------------------- */
+
+.bw-tabs--panel .bw-tabs--navigation {
+  z-index: 3;
+  background-color: var(--tabs-level2-bg);
+}
+
+.bw-tabs--panel .bw-tabs--navigation .bw-tabs--target {
+  color: var(--tabs-level2-color);
+}
+
+.bw-tabs--panel .bw-tabs--navigation .bw-tabs--target:hover,
+.bw-tabs--panel .bw-tabs--navigation .bw-tabs--target:focus,
+.bw-tabs--panel .bw-tabs--navigation .bw-tabs--target:active {
+  color: var(--tabs-level2-hover-color);
+}
+
+.bw-tabs--panel .bw-tabs--navigation .bw-tabs--item.is-active .bw-tabs--target {
+  color: var(--tabs-level2-hover-color);
+  background-color: var(--tabs-level2-hover-bg);
+}
+
+/* Nested tabs (level 3+)
+ * ------------------------- */
+
+.bw-tabs--panel .bw-tabs--panel .bw-tabs--navigation {
+  z-index: 2;
+  background-color: var(--tabs-level3-bg);
+}
+
+.bw-tabs--panel .bw-tabs--panel .bw-tabs--navigation .bw-tabs--target {
+  color: var(--tabs-level3-color);
+}
+
+.bw-tabs--panel .bw-tabs--panel .bw-tabs--navigation .bw-tabs--target:hover,
+.bw-tabs--panel .bw-tabs--panel .bw-tabs--navigation .bw-tabs--target:focus,
+.bw-tabs--panel .bw-tabs--panel .bw-tabs--navigation .bw-tabs--target:active {
+  color: var(--tabs-level3-hover-color);
+}
+
+.bw-tabs--panel .bw-tabs--panel .bw-tabs--navigation .bw-tabs--item.is-active .bw-tabs--target {
+  color: var(--tabs-level3-hover-color);
+  background-color: var(--tabs-level3-hover-bg);
+}
