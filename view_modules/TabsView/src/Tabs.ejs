@@ -1,8 +1,8 @@
+<header class="bw-tabs--header <% if (logo != null) { %>has-logo<% } %>">
+	<% if (logo != null) { %><img src="<%= logo %>"/><% } %>
+</header>
 <div class="bw-tabs--pusher" />
-
 <nav class="bw-tabs--navigation">
-  <header class="bw-tabs--header <% if (logo != null) { %>has-logo<% } %>" style="<% if (logo != null) { %>background-image: url('<%= logo %>');<% } %>" />
-
   <ul class="bw-tabs--items">
     <% _.each(tabs, function (tab) { %>
       <TabView key="<%= tab %>" />
