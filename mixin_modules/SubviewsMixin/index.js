@@ -16,6 +16,10 @@
 
   var subviews = {};
 
+  var getDataAttribute = function (el, attr) {
+    return el.getAttribute('data-' + attr);
+  };
+
   var getSubviews = function (view) {
     return subviews[view.cid] || (subviews[view.cid] = {});
   };
@@ -49,7 +53,7 @@
     var key = el.tagName + subkey;
     var subview = getSubview(view, key);
     if (!subview) {
-      subview = subviews[key] = fn(subkey, el);
+      subview = subviews[key] = fn(subkey, _.partial(getDataAttribute, el));
       subview.remove = _.wrap(subview.remove, _.partial(subviewRemoveWrapper, view, key));
       subview.render();
     }
