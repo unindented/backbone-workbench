@@ -5,11 +5,11 @@
 
   <ul class="bw-tabs--items">
     <% _.each(tabs, function (tab) { %>
-      <TabView key="<%= tab %>" />
+      <TabView key="<%= tab %>"></TabView>
     <% }); %>
   </ul>
 </nav>
 
 <div class="bw-tabs--panels">
-  <PanelView key="<%= selection %>" />
+  <PanelView key="<%= selection %>"></PanelView>
 </div>
