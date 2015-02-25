@@ -95,8 +95,8 @@
     return remove.call(this);
   };
 
-  var subviewRemoveWrapper = function (parent, key, remove) {
-    var subviews = getSubviews(parent);
+  var subviewRemoveWrapper = function (view, key, remove) {
+    var subviews = getSubviews(view);
     delete subviews[key];
     return remove.call(this);
   };
