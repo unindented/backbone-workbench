@@ -1,4 +1,4 @@
-# Backbone Workbench [![Version](https://img.shields.io/npm/v/backbone-workbench.svg)](https://www.npmjs.com/package/backbone-workbench) [![Build Status](https://img.shields.io/travis/unindented/backbone-workbench.svg)](http://travis-ci.org/unindented/backbone-workbench) [![Dependency Status](https://img.shields.io/gemnasium/unindented/backbone-workbench.svg)](https://gemnasium.com/unindented/backbone-workbench) ![Abandoned](https://img.shields.io/badge/status-abandoned-red.svg)
+# Backbone Workbench [![Version](https://img.shields.io/npm/v/backbone-workbench.svg)](https://www.npmjs.com/package/backbone-workbench) [![Build Status](https://img.shields.io/travis/unindented/backbone-workbench.svg)](http://travis-ci.org/unindented/backbone-workbench) ![Abandoned](https://img.shields.io/badge/status-abandoned-red.svg)
 
 Tool to help you interact with your Backbone components in isolation.
 
